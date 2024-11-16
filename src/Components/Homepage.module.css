@@ -13,7 +13,7 @@ body{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h2{
+.heading{
     color: #003366;
     text-align: center;
     margin-bottom: 20px;
@@ -47,11 +47,11 @@ form{
     transition: border-color 0.3s;
 }
 
-.form-color input:focus{
+.form-group input:focus{
     border-color: #003366;
 }
 
-button[type="submit"]{
+.submitButton{
     background-color: #003366;
     color: white;
     padding: 12px;
@@ -62,7 +62,7 @@ button[type="submit"]{
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover{
+.submitButton:hover{
     background-color: #005b99;
 }
 

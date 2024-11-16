@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Homepage.css";
+import styles from "./Homepage.module.css";
 import Navbar from "./Navbar";
 import NavbarClass from "./NavbarClass";
 
@@ -22,11 +22,11 @@ const HomePage = () => {
   };
 
   return (
-    <div className="homepage">
-      <NavbarClass />
-      <h2>Book your train ticket</h2>
+    <div className={styles.homepage}>
+      <Navbar />
+      <h2 className={styles.heading}>Book your train ticket</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className={styles['form-group']}>
           <label htmlFor="from">From</label>
           <input
             type="text"
@@ -37,7 +37,7 @@ const HomePage = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div className={styles['form-group']}>
           <label htmlFor="to">To</label>
           <input
             type="text"
@@ -48,7 +48,7 @@ const HomePage = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div className={styles['form-group']}>
           <label htmlFor="date">Date</label>
           <input
             type="date"
@@ -58,7 +58,7 @@ const HomePage = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Search Trains</button>
+        <button type="submit" className={styles.submitButton}>Search Trains</button>
       </form>
     </div>
   );

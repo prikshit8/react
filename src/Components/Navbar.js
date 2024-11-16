@@ -1,8 +1,19 @@
-import './Navbar.css';
+import styled from "styled-components";
+
+import "./Navbar.css";
+
+const StyleNav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffcc00;
+  padding: 10px 20px;
+  color: #343a40;
+`;
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <StyleNav>
       <h1>IRCTC</h1>
       <ul>
         <li>
@@ -15,7 +26,7 @@ const Navbar = () => {
           <a href="/Register">Register</a>
         </li>
       </ul>
-    </nav>
+    </StyleNav>
   );
 };
 
