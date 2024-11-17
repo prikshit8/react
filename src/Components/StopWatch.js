@@ -9,9 +9,13 @@ const StopWatch = () => {
   //     }, 1000);
   //   }, [count]);
   useEffect(() => {
-    setInterval(() => {
+    let id = setInterval(() => {
+      console.log('count increased');
       setCount(prev => prev + 1);
     }, 1000);
+    return () => {
+      clearInterval(id);
+    };
   }, []);
   return <div>{count}</div>;
 };

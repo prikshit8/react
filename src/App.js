@@ -9,11 +9,25 @@ import Navbar from "./Components/Navbar";
 import SearchComp from "./Components/SearchComp";
 import TrainCard from "./Components/TrainCard";
 import StopWatch from "./Components/StopWatch";
+import UseEffectComp from "./Components/UseEffectComp/UseEffectComp";
+import Example from "./Components/LifeCycle/LifeCycle";
+import { usePrev } from "./hooks/usePrev";
+import UsePrevComp from "./Components/UsePrevComp/UsePrevComp";
 
 function App() {
+  // const [show, setShow] = useState(true);
+  // const [count,setCount] = useState(0);
+  // const prevCount = usePrev(count);
   return (
     <div>
-      <StopWatch />
+      <UsePrevComp />
+      {/* <h1>Current Count: {count}</h1>
+      <h2>Prev Count: {prevCount}</h2>
+      <button onClick={()=>setCount(count+1)}>Increase Count</button> */}
+      {/* {show && <Example />} */}
+      {/* {show && <StopWatch />} */}
+      {/* {show && <UseEffectComp />}*/}
+      {/* <button onClick={() => setShow(!show)}>{show ? "hide" : "show"}</button>  */}
       {/* <div>currentCount - {count}</div>
       <div>prevCount - {count}</div>
       <button onClick={() => setCount(count + 1)}>increase count</button> */}
