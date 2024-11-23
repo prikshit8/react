@@ -1,10 +1,15 @@
-// always do named export for custom hooks / utility fns
+// always use 'use' prefix with your custom hook
+// we should named export for custom hooks
 
-import { useRef } from "react";
-
-// always start custom hook with 'use'
+import { useEffect, useRef } from "react";
 
 export const usePrev = (value) => {
-  const ref = useRef(value);
-  return ref.current;
+  const prevValue = useRef(value);
+  // we will update the value once my component
+  // is rendered
+  useEffect(()=>{
+    prevValue.current = value;
+  },[value])
+  // prevValue.current = value; /// it's updating prevValue on every re-render
+  return prevValue.current;
 };

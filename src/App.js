@@ -1,17 +1,4 @@
-import { useState } from "react";
 import "./App.css";
-import Form from "./Components/Form";
-import FormClass from "./Components/FormClass";
-import Greet from "./Components/Greet";
-import GreetClass from "./Components/GreetClass";
-import HomePage from "./Components/HomePage";
-import Navbar from "./Components/Navbar";
-import SearchComp from "./Components/SearchComp";
-import TrainCard from "./Components/TrainCard";
-import StopWatch from "./Components/StopWatch";
-import UseEffectComp from "./Components/UseEffectComp/UseEffectComp";
-import Example from "./Components/LifeCycle/LifeCycle";
-import { usePrev } from "./hooks/usePrev";
 import UsePrevComp from "./Components/UsePrevComp/UsePrevComp";
 
 function App() {
