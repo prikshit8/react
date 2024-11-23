@@ -1,16 +1,17 @@
 import { useState } from "react";
 import styles from "./Homepage.module.css";
-import Navbar from "./Navbar";
-import NavbarClass from "./NavbarClass";
+import { useForm } from "../../hooks/useForm";
+import Navbar from "../Navbar/Navbar";
 
 const HomePage = () => {
-  const [formData, setFormData] = useState({ from: "", to: "", date: "" });
+  // const [formData, setFormData] = useState({ from: "", to: "", date: "" });
+  const [formData, setFormData] = useForm({ from: "", to: "", date: "" });
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
-
+  // const handleChange = (e) => {
+  //   const { id, value } = e.target;
+  //   setFormData({ ...formData, [id]: value });
+  // };
+  // const [form,setForm] = useForm({ from: "", to: "", date: "" });
   // let name = "ajay";
   // let obj = {
   //   [name]: 'he is good boy',
@@ -26,7 +27,7 @@ const HomePage = () => {
       <Navbar />
       <h2 className={styles.heading}>Book your train ticket</h2>
       <form onSubmit={handleSubmit}>
-        <div className={styles['form-group']}>
+        <div className={styles["form-group"]}>
           <label htmlFor="from">From</label>
           <input
             type="text"
@@ -34,10 +35,10 @@ const HomePage = () => {
             placeholder="Enter departure station"
             required
             value={formData.from}
-            onChange={handleChange}
+            onChange={setFormData}
           />
         </div>
-        <div className={styles['form-group']}>
+        <div className={styles["form-group"]}>
           <label htmlFor="to">To</label>
           <input
             type="text"
@@ -45,20 +46,22 @@ const HomePage = () => {
             placeholder="Enter your arrival station"
             required
             value={formData.to}
-            onChange={handleChange}
+            onChange={setFormData}
           />
         </div>
-        <div className={styles['form-group']}>
+        <div className={styles["form-group"]}>
           <label htmlFor="date">Date</label>
           <input
             type="date"
             id="date"
             required
             value={formData.date}
-            onChange={handleChange}
+            onChange={setFormData}
           />
         </div>
-        <button type="submit" className={styles.submitButton}>Search Trains</button>
+        <button type="submit" className={styles.submitButton}>
+          Search Trains
+        </button>
       </form>
     </div>
   );

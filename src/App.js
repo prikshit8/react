@@ -1,4 +1,5 @@
 import "./App.css";
+import HomePage from "./Components/Homepage/HomePage";
 import UsePrevComp from "./Components/UsePrevComp/UsePrevComp";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   // const prevCount = usePrev(count);
   return (
     <div>
-      <UsePrevComp />
+      <HomePage />
       {/* <h1>Current Count: {count}</h1>
       <h2>Prev Count: {prevCount}</h2>
       <button onClick={()=>setCount(count+1)}>Increase Count</button> */}
