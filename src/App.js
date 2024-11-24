@@ -1,17 +1,27 @@
 import "./App.css";
 import Counter from "./Components/Counter/Counter";
 import HomePage from "./Components/Homepage/HomePage";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 import Search from "./Components/Search/Search";
+import Solution from "./Components/Solution/Solution";
 import UsePrevComp from "./Components/UsePrevComp/UsePrevComp";
+import { useOnlineStatus } from "./hooks/useOnlineStatus";
 
 function App() {
   // const [show, setShow] = useState(true);
   // const [count,setCount] = useState(0);
   // const prevCount = usePrev(count);
+  const onlineStatus = useOnlineStatus();
+  if (!onlineStatus) {
+    return <div>No internet connection....</div>;
+  }
   return (
     <div>
       {/* <HomePage /> */}
-      <Counter />
+      {/* <Counter /> */}
+      {/* <Login /> */}
+      <Solution />
       {/* <Search /> */}
       {/* <h1>Current Count: {count}</h1>
       <h2>Prev Count: {prevCount}</h2>
