@@ -10,36 +10,46 @@ import UsePrevComp from "./Components/UsePrevComp/UsePrevComp";
 import { useOnlineStatus } from "./hooks/useOnlineStatus";
 import Navbar from "./Components/Navbar/Navbar";
 import NotFound from "./Components/NotFound/NotFound";
+import App2 from "./App2";
+import { useState } from "react";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <>
-        <Navbar />
-        <Outlet />
-      </>
-    ),
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: "/login", element: <Login /> },
-      { path: "/register", element: <Register /> },
-      { path: "*", element: <NotFound /> },
-    ],
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: (
+//       <>
+//         <Navbar />
+//         <Outlet />
+//       </>
+//     ),
+//     children: [
+//       { index: true, element: <HomePage /> },
+//       { path: "/login", element: <Login /> },
+//       { path: "/register", element: <Register /> },
+//       { path: "*", element: <NotFound /> },
+//     ],
+//   },
+// ]);
 
 function App() {
   // const [show, setShow] = useState(true);
   // const [count,setCount] = useState(0);
   // const prevCount = usePrev(count);
-  const onlineStatus = useOnlineStatus();
-  if (!onlineStatus) {
-    return <div>No internet connection....</div>;
-  }
+  // const onlineStatus = useOnlineStatus();
+  // if (!onlineStatus) {
+  //   return <div>No internet connection....</div>;
+  // }
+  const [val, setVal] = useState(1);
+  const [count,setCount] = useState(0);
   return (
     <div>
-      <RouterProvider router={router} />
+      <App2 val={val} />
+      <button onClick={() => setVal(val + 1)}>increase val</button>
+      <br />
+      <br />
+      {count}
+      <button onClick={()=>setCount(count +1 )}> increase count </button>
+      {/* <RouterProvider router={router} /> */}
       {/* <HomePage /> */}
       {/* <Counter /> */}
       {/* <Login /> */}
