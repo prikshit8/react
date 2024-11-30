@@ -1,4 +1,5 @@
 import "./App.css";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Counter from "./Components/Counter/Counter";
 import HomePage from "./Components/Homepage/HomePage";
 import Login from "./Components/Login/Login";
@@ -7,6 +8,26 @@ import Search from "./Components/Search/Search";
 import Solution from "./Components/Solution/Solution";
 import UsePrevComp from "./Components/UsePrevComp/UsePrevComp";
 import { useOnlineStatus } from "./hooks/useOnlineStatus";
+import Navbar from "./Components/Navbar/Navbar";
+import NotFound from "./Components/NotFound/NotFound";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <Navbar />
+        <Outlet />
+      </>
+    ),
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+]);
 
 function App() {
   // const [show, setShow] = useState(true);
@@ -18,10 +39,11 @@ function App() {
   }
   return (
     <div>
+      <RouterProvider router={router} />
       {/* <HomePage /> */}
       {/* <Counter /> */}
       {/* <Login /> */}
-      <Solution />
+      {/* <Solution /> */}
       {/* <Search /> */}
       {/* <h1>Current Count: {count}</h1>
       <h2>Prev Count: {prevCount}</h2>

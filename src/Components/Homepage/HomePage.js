@@ -24,7 +24,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.homepage}>
-      <Navbar />
+      {/* <Navbar /> */}
       <h2 className={styles.heading}>Book your train ticket</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles["form-group"]}>
