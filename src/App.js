@@ -12,6 +12,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import NotFound from "./Components/NotFound/NotFound";
 import App2 from "./App2";
 import { useState } from "react";
+import App3 from "./App3";
 
 // const router = createBrowserRouter([
 //   {
@@ -39,16 +40,21 @@ function App() {
   // if (!onlineStatus) {
   //   return <div>No internet connection....</div>;
   // }
-  const [val, setVal] = useState(1);
-  const [count,setCount] = useState(0);
+  // const [val, setVal] = useState(1);
+  // const [count, setCount] = useState(0);
+  // const [show, setShow] = useState(false);
+  const [random,setRandom] = useState(0);
   return (
     <div>
-      <App2 val={val} />
+      {/* <App2 val={val} />
       <button onClick={() => setVal(val + 1)}>increase val</button>
       <br />
       <br />
       {count}
-      <button onClick={()=>setCount(count +1 )}> increase count </button>
+      <button onClick={()=>setCount(count +1 )}> increase count </button> */}
+      <App3 key={random} />
+      <button onClick={()=>setRandom(random+1)}>reset count</button>
+      {/* <button onClick={() => setShow(!show)}>{show ? "hide" : "show"}</button> */}
       {/* <RouterProvider router={router} /> */}
       {/* <HomePage /> */}
       {/* <Counter /> */}
